@@ -21,8 +21,8 @@ export default function Question_04() {
 
   // 入力値に変更が生じたときの処理
   const handleChange = e => {
+    setText(e.target.value); // 入力値を state にセット
   };
-
   return (
     <div>
       <h1 className='question-title'>【問５】 State の管理</h1>

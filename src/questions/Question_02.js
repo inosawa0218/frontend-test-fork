@@ -30,13 +30,17 @@ export default function Question_02() {
     { "name" : "沖縄県", "population" : 1467480 }
   ];
 
-  const result = kyusyu.map((el, index) => {
+    // 人口の降順でソート
+    const sortedKyusyu = kyusyu.sort((a, b) => b.population - a.population);
+
+    // 番号付けして結果を表示
+    const result = sortedKyusyu.map((el, index) => {
     return (
       <li key={index}>
-        <div>No.</div>
-        <div>{el.name}</div>
-        <div>{el.population} 人</div>
-      </li>
+      <div>No.{index + 1}</div>
+      <div>{el.name}</div>
+      <div>{el.population.toLocaleString()} 人</div>
+    </li>
     );
   });
 
